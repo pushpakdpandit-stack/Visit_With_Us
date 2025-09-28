@@ -8,6 +8,7 @@ import joblib
 model_path = hf_hub_download(repo_id="Pushpak21/tourism-package-model", filename="best_tourism_package_model.joblib")
 model = joblib.load(model_path)
 
+
 # Feature descriptions
 feature_info = {
     "Age": "Age of the customer (years).",
