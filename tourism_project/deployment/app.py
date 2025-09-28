@@ -8,8 +8,7 @@ from huggingface_hub import hf_hub_download
 model_path = hf_hub_download(repo_id="Pushpak21/tourism-package-model", filename="best_tourism_package_model.joblib")
 model = joblib.load(model_path)
 
-
-# Feature descriptions
+# Feature descriptions for UI
 feature_info = {
     "Age": "Age of the customer (years).",
     "TypeofContact": "How the customer was contacted (Company Invited / Self Inquiry).",

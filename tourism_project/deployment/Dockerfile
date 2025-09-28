@@ -18,12 +18,14 @@ ENV HOME=/home/user
 # 4) Prepare user home and app dir, set ownership
 RUN mkdir -p $HOME/app && chown -R user:user $HOME
 
+
 # 5) Now switch to the non-root user
 USER user
 WORKDIR $HOME/app
 
 # 6) Copy the rest of the source as that user
 COPY --chown=user:user . $HOME/app
+
 
 # 7) Run your app
 CMD ["streamlit", "run", "app.py", "--server.port=8501", "--server.address=0.0.0.0", "--server.enableXsrfProtection=false"]
